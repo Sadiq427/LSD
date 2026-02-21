@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>MedLab System</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!-- Bootstrap -->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+<!-- FontAwesome -->
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+
+<!-- Slick -->
+
+<link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet"/>
+
+
+
+<style>
+
+
+:root{
+
+--bg:#ffffff;
+
+--text:#222;
+
+--card:#ffffff;
+
+--grid:#e9ecef;
+
+}
+
+
+
+.dark{
+
+--bg:#0f172a;
+
+--text:#f1f5f9;
+
+--card:#1e293b;
+
+--grid:#334155;
+
+}
+
+
+
+body{
+
+background:var(--bg);
+
+color:var(--text);
+
+font-family:Segoe UI;
+
+overflow-x:hidden;
+
+
+/* grid */
+
+background-image:
+
+linear-gradient(var(--grid) 1px, transparent 1px),
+
+linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+
+background-size:40px 40px;
+
+transition:.3s;
+
+}
+
+
+
+/* navbar */
+
+.navbar{
+
+background:var(--card);
+
+box-shadow:0 5px 15px rgba(0,0,0,.05);
+
+}
+
+
+
+/* hero */
+
+.hero{
+
+min-height:60vh;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+}
+
+
+
+/* cards */
+
+.card-box{
+
+background:var(--card);
+
+padding:30px;
+
+text-align:center;
+
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+
+transition:.3s;
+
+}
+
+
+.card-box:hover{
+
+transform:translateY(-10px);
+
+}
+
+
+
+/* stats */
+
+.stat{
+
+font-size:40px;
+
+font-weight:bold;
+
+color:#dc3545;
+
+}
+
+
+
+/* testimonial */
+
+.testimonial-slider{
+
+max-width:400px;
+
+margin:auto;
+
+}
+
+
+
+.testimonial-slider p{
+
+font-size:18px;
+
+}
+
+
+
+/* form */
+
+.contact-form{
+
+background:var(--card);
+
+padding:40px;
+
+max-width:600px;
+
+margin:auto;
+
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+
+border-radius:10px;
+
+}
+
+
+
+input, textarea{
+
+background:var(--bg) !important;
+
+color:var(--text) !important;
+
+}
+
+
+
+/* footer */
+
+footer{
+
+background:var(--card);
+
+padding:30px;
+
+text-align:center;
+
+margin-top:50px;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg sticky-top">
+
+<div class="container">
+
+
+<!-- Logo -->
+
+<a class="navbar-brand fw-bold text-danger" href="#home">
+
+<i class="fa fa-flask"></i> MedLab
+
+</a>
+
+
+
+<!-- Mobile button -->
+
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+
+
+<!-- Links -->
+
+<div class="collapse navbar-collapse" id="nav">
+
+
+<ul class="navbar-nav mx-auto">
+
+
+<li class="nav-item">
+
+<a class="nav-link" href="#home">
+
+<i class="fa fa-house"></i> Home
+
+</a>
+
+</li>
+
+
+<li class="nav-item">
+
+<a class="nav-link" href="#services">
+
+<i class="fa fa-briefcase-medical"></i> Services
+
+</a>
+
+</li>
+
+
+<li class="nav-item">
+
+<a class="nav-link" href="#stats">
+
+<i class="fa fa-chart-line"></i> Statistics
+
+</a>
+
+</li>
+
+
+<li class="nav-item">
+
+<a class="nav-link" href="#testimonial">
+
+<i class="fa fa-star"></i> Testimonials
+
+</a>
+
+</li>
+
+
+<li class="nav-item">
+
+<a class="nav-link" href="#contact">
+
+<i class="fa fa-envelope"></i> Contact
+
+</a>
+
+</li>
+
+
+</ul>
+
+
+
+<!-- Right buttons -->
+
+<div class="d-flex gap-2">
+
+
+<!-- Dark mode -->
+
+<button id="mode" class="btn btn-outline-danger">
+
+<i class="fa fa-moon"></i>
+
+</button>
+
+
+
+<!-- Login button -->
+
+<a href="login.php" class="btn btn-danger">
+
+<i class="fa fa-user"></i> Login
+
+</a>
+
+
+</div>
+
+
+
+</div>
+
+</div>
+
+</nav>
+
+
+
+
+<!-- HERO -->
+
+<section class="hero container" id="home">
+
+
+<div class="col-lg-8 mx-auto">
+
+
+<h1 class="fw-bold mb-3">
+
+Medical Laboratory System
+
+</h1>
+
+
+
+<div class="hero-slider mb-3">
+
+
+<div>
+
+<h3 class="text-danger">
+
+Accurate Results
+
+</h3>
+
+</div>
+
+
+<div>
+
+<h3 class="text-danger">
+
+Fast Processing
+
+</h3>
+
+</div>
+
+
+<div>
+
+<h3 class="text-danger">
+
+Trusted Experts
+
+</h3>
+
+</div>
+
+
+</div>
+
+
+
+<p class="mb-4">
+
+Book medical tests online and receive fast secure laboratory reports anytime.
+
+</p>
+
+
+
+<div class="d-flex justify-content-center gap-3 flex-wrap">
+
+
+<button class="btn btn-danger px-4">
+
+Book Test
+
+</button>
+
+
+
+<button class="btn btn-outline-danger px-4">
+
+View Services
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<!-- STATS -->
+
+<section id="stats" class="container text-center my-5">
+
+
+<div class="row g-4">
+
+
+<div class="col-md-4">
+
+<div class="stat">
+
+15k+
+
+</div>
+
+Patients
+
+</div>
+
+
+
+<div class="col-md-4">
+
+<div class="stat">
+
+50+
+
+</div>
+
+Doctors
+
+</div>
+
+
+
+<div class="col-md-4">
+
+<div class="stat">
+
+20+
+
+</div>
+
+Laboratories
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<!-- SERVICES -->
+
+<section id="services"  class="container my-5">
+
+
+<h2 class="text-center mb-5">
+
+Services
+
+</h2>
+
+
+
+<div class="row g-4">
+
+
+<div class="col-md-4">
+
+<div class="card-box">
+
+<i class="fa fa-vial fa-2x text-danger mb-3"></i>
+
+<h4>
+
+Blood Test
+
+</h4>
+
+<p>
+
+Complete blood analysis
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="col-md-4">
+
+<div class="card-box">
+
+<i class="fa fa-dna fa-2x text-danger mb-3"></i>
+
+<h4>
+
+DNA Test
+
+</h4>
+
+<p>
+
+Genetic screening
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="col-md-4">
+
+<div class="card-box">
+
+<i class="fa fa-user-doctor fa-2x text-danger mb-3"></i>
+
+<h4>
+
+Consultation
+
+</h4>
+
+<p>
+
+Expert doctors
+
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<!-- TESTIMONIAL -->
+
+<section id="testimonial" class="container text-center my-5">
+
+
+<h2>
+
+Testimonials
+
+</h2>
+
+
+
+<div class="testimonial-slider mt-4">
+
+
+<div>
+
+<p>
+
+Best laboratory service ever. Very fast and accurate.
+
+</p>
+
+<b>
+
+Ahmad
+
+</b>
+
+</div>
+
+
+
+<div>
+
+<p>
+
+Professional doctors and great support.
+
+</p>
+
+<b>
+
+Ali
+
+</b>
+
+</div>
+
+
+
+<div>
+
+<p>
+
+Highly recommended medical lab.
+
+</p>
+
+<b>
+
+Sadiq
+
+</b>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="container my-5">
+
+
+<h2 class="text-center mb-4">
+
+Contact Us
+
+</h2>
+
+
+
+<form class="contact-form">
+
+
+<div class="row">
+
+
+<div class="col-md-6 mb-3">
+
+<input class="form-control"
+
+placeholder="First Name">
+
+</div>
+
+
+
+<div class="col-md-6 mb-3">
+
+<input class="form-control"
+
+placeholder="Last Name">
+
+</div>
+
+
+</div>
+
+
+
+<input class="form-control mb-3"
+
+placeholder="Email">
+
+
+
+<textarea class="form-control mb-3"
+
+rows="4"
+
+placeholder="Message"></textarea>
+
+
+
+<button class="btn btn-danger w-100">
+
+Send Message
+
+</button>
+
+
+</form>
+
+
+</section>
+
+
+
+
+<!-- FOOTER -->
+<footer class="pt-4 pb-3 mt-5 border-top">
+
+<div class="container">
+
+<div class="d-flex justify-content-between align-items-center flex-wrap">
+
+<!-- Left Side -->
+<div>
+<p class="mb-0 text-muted">
+© 2026 MedLab System. All rights reserved.
+</p>
+</div>
+
+<!-- Right Side -->
+<div>
+
+<a href="#" class="fs-4 me-3 text-primary text-decoration-none">
+<i class="fab fa-facebook"></i>
+</a>
+
+<a href="#" class="fs-4 me-3 text-danger text-decoration-none">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="#" class="fs-4 me-3 text-danger text-decoration-none">
+<i class="fab fa-youtube"></i>
+</a>
+
+<a href="#" class="fs-4 me-3 text-info text-decoration-none">
+<i class="fab fa-twitter"></i>
+</a>
+
+<a href="#" class="fs-4 text-primary text-decoration-none">
+<i class="fab fa-linkedin"></i>
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+
+
+<!-- jQuery -->
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- Slick -->
+
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+
+
+<script>
+
+
+$('.hero-slider').slick({
+
+arrows:false,
+
+autoplay:true,
+
+autoplaySpeed:2500,
+
+fade:true
+
+})
+
+
+
+$('.testimonial-slider').slick({
+
+arrows:false,
+
+dots:false,
+
+autoplay:true
+
+})
+
+
+
+$('#mode').click(function(){
+
+$('body').toggleClass('dark')
+
+})
+
+
+</script>
+
+
+
+</body>
+
+</html>
